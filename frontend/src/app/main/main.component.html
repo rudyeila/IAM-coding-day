@@ -1,0 +1,30 @@
+<div id="centerme">
+<h2>Hello  {{user.given_name }} {{user.family_name  }}</h2>
+
+Here are youre insurance offers:
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Price Per</th>
+        <th>valid From</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let insurance of user.insuranceOffers">
+            <td>{{insurance.name}}</td>
+            <td>{{insurance.description}}</td>
+            <td>{{insurance.price}}</td>
+            <td>{{insurance.pricePer}}</td>
+            <td>{{insurance.validFrom}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<details>
+<pre>{{user | json}}</pre>
+<pre>{{user.insuranceOffers[0].name }}</pre>
+</details>
+
+</div>
